@@ -38,12 +38,10 @@ pub fn parse_lexed_input(tokens: Vec<lexer::Token>) -> AST {
                     child: iter_tokens.peek().cloned().cloned(),
                 });
             }
-            lexer::Token::Plus => {
-                nodes.push(Node {
-                    token: lexer::Token::Plus,
-                    child: iter_tokens.peek().cloned().cloned(),
-                })
-            }
+            lexer::Token::Plus => nodes.push(Node {
+                token: lexer::Token::Plus,
+                child: iter_tokens.peek().cloned().cloned(),
+            }),
             lexer::Token::Star => {
                 nodes.push(Node {
                     token: lexer::Token::Star,
